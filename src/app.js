@@ -9,7 +9,7 @@ const viewsPath = path.join(__dirname , '../templates/views')
 const partialPath = path.join(__dirname ,'../templates/partials')
 
 const app = express();
-
+const port = process.env.PORT || 3000;
 app.set('view engine','hbs')
 app.set('views' , viewsPath);
 hbs.registerPartials(partialPath);
@@ -59,7 +59,8 @@ app.get('/weather', (req,res)=>{
                 res.send({
                     location: req.query.location,
                     temperature:forecastData.temperature,
-                    feelslike: forecastData.feelslike
+                    feelslike: forecastData.feelslike,
+                    weather_description: forecastData.current
                 })
             })
 
@@ -72,6 +73,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log('listening at port 3000');
+app.listen(port,()=>{
+    console.log('listening at port '+ port);
 })
