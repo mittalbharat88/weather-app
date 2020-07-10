@@ -19,21 +19,21 @@ app.use(express.static(dirPathHtml));
 app.get('',(req, res)=>{
     res.render('index',{
         title: 'Weather app',
-        name: 'bharat mittal'
+        name: 'Bharat mittal'
     });
 })
 app.get('/about',(req, res)=> {
     res.render('about',{
         title: 'About me',
-        name: 'bharat mittal'
+        name: 'Bharat mittal'
     });
 })
 
 app.get('/help',(req, res)=> {
     res.render('help',{
-        helpText: 'page is under development',
-        title: 'Need any help?',
-        name: 'bharat mittal'
+        helpText: 'Need any help? I do too!',
+        title: 'Help',
+        name: 'Bharat mittal'
     });
 })
 
