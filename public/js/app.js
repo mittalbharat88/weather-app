@@ -22,10 +22,11 @@ weatherForm.addEventListener('submit',(event)=>{
             if(data.error){
                 msg_1.textContent= data.error;
             }else{
-                msg_1.textContent= data.location;
-                msg_2.textContent = 'weather-description : '+ data.weather_description;
-                msg_3.textContent = 'feels like : '+data.feelslike;     
-                msg_4.textContent= 'current temperature is : ' + data.temperature;
+                msg_1.textContent= 'Location : ' + data.location;
+                msg_2.textContent = 'Weather-description : '+ data.weather_description;
+                msg_3.textContent= 'Current Temperature : ' + data.temperature;
+                msg_4.textContent = 'Feels-like : '+data.feelslike;     
+               
             }
         })
     })

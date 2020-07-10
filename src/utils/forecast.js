@@ -9,7 +9,7 @@ const forecast = (latitude,longitude, callback)=>{
         }else if(body.error){
             callback('Error - please check the url!',undefined);
         }else{
-            callback(undefined,{temperature: body.current.temperature, feelslike: body.current.feelslike, weather_description: body.current.weather_descriptions});
+            callback(undefined,{location: body.location.name,temperature: body.current.temperature, feelslike: body.current.feelslike, weather_description: body.current.weather_descriptions});
         }
     })
 }
