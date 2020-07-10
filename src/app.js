@@ -60,7 +60,7 @@ app.get('/weather', (req,res)=>{
                     location: req.query.location,
                     temperature:forecastData.temperature,
                     feelslike: forecastData.feelslike,
-                    weather_description: forecastData.current
+                    weather_description: forecastData.weather_description
                 })
             })
 

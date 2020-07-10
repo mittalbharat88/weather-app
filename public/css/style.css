@@ -31,6 +31,11 @@ header a{
     text-decoration: none;
     margin-right: 20px;
     font-size: medium;
+    font-size: 18px;
+}
+
+#form-1{
+    margin-top : 20px;
 }
 
 input{

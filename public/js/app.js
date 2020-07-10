@@ -17,11 +17,13 @@ weatherForm.addEventListener('submit',(event)=>{
     fetch('/weather?location='+ location).then((response)=>{
         response.json().then(data=>{
             msg_2.textContent='';
+            msg_3.textContent='';
+            msg_4.textContent='';
             if(data.error){
                 msg_1.textContent= data.error;
             }else{
                 msg_1.textContent= data.location;
-                msg_2.textContent = 'weather-description : '+ data.weather_discription;
+                msg_2.textContent = 'weather-description : '+ data.weather_description;
                 msg_3.textContent = 'feels like : '+data.feelslike;     
                 msg_4.textContent= 'current temperature is : ' + data.temperature;
             }
