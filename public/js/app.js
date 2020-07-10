@@ -13,13 +13,14 @@ weatherForm.addEventListener('submit',(event)=>{
     event.preventDefault();
 
     const location = search.value
+    msg_1.textContent= 'loading...'
+    msg_2.textContent='';
+    msg_3.textContent='';
+    msg_4.textContent='';
     
     fetch('/weather?location='+ location).then((response)=>{
         response.json().then(data=>{
-            msg_1.textContent= 'loading...'
-            msg_2.textContent='';
-            msg_3.textContent='';
-            msg_4.textContent='';
+            
             if(data.error){
                 msg_1.textContent= data.error;
             }else{
