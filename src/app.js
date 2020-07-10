@@ -48,7 +48,7 @@ app.get('/weather', (req,res)=>{
         return res.send({error: 'please fill in the location'})
     }
 
-    geocode(req.query.location, (error,{latitude, longitude} = {})=>{
+    geocode(req.query.location, (error,{latitude, longitude, location} = {})=>{
             if(error){
                return res.send({error});
             }
@@ -57,7 +57,7 @@ app.get('/weather', (req,res)=>{
                     return res.send({error})
                 }
                 res.send({
-                    location: forecastData.location,
+                    location: location,
                     temperature:forecastData.temperature,
                     feelslike: forecastData.feelslike,
                     weather_description: forecastData.weather_description
